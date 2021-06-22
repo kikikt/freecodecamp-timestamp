@@ -24,7 +24,8 @@ router.get('/:date', function(req, res) {
             utc: dateU
         });
     } else {
-        res.send("škoda")
+        let err = { error : "Invalid Date" };
+        res.send(JSON.stringify(err))
     }
 
 })
