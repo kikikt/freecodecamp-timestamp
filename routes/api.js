@@ -1,6 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/', function(req, res) {
+    res.json({
+        unix: parseInt(new Date().getTime()),
+        utc: new Date().toUTCString()
+    })
+})
+
 router.get('/:date', function(req, res) {
     const dateReg = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/);
     const unixReg = new RegExp(/^\d{10}\d*$/);
