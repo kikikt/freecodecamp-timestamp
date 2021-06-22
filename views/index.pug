@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h2 Head to an example
+  a(href="/api/" + `${currentdate}`) api/#{currentdate} 
+  br
+  a(href="/api/" + `${unixdate}`) api/#{unixdate} 
+
+  h3 Example output 
+  code #{output}
