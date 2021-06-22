@@ -25,7 +25,7 @@ router.get('/:date', function(req, res) {
         });
     } else {
         let err = { error : "Invalid Date" };
-        res.send(JSON.stringify(err))
+        res.json(err)
     }
 
 })
