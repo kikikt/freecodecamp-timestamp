@@ -9,8 +9,8 @@ router.get('/:date', function(req, res) {
     if (dateReg.test(date)) {
         
         var dateFormatted = new Date (date).toUTCString();
-        res.send({
-            unix: new Date(date).getTime(),
+        res.json({
+            unix: parseInt(new Date(date).getTime()),
             utc: dateFormatted
         })
 
@@ -19,8 +19,8 @@ router.get('/:date', function(req, res) {
         var unixTimestamp = req.params.date;
         var dateU = new Date (parseInt(unixTimestamp)).toUTCString();
 
-        res.send({
-            unix: unixTimestamp, 
+        res.json({
+            unix: parseInt(unixTimestamp), 
             utc: dateU
         });
     } else {
