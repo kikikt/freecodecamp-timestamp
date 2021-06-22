@@ -17,7 +17,7 @@ router.get('/:date', function(req, res) {
     } else if (unixReg.test(date)) {
 
         var unixTimestamp = req.params.date;
-        var dateU = new Date (parseInt(unixTimestamp)).toLocaleString();
+        var dateU = new Date (parseInt(unixTimestamp)).toUTCString();
 
         res.send({
             unix: unixTimestamp, 
