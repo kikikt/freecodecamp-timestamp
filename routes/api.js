@@ -12,8 +12,9 @@ router.get('/:date', function(req, res) {
     const dateReg = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/);
     const unixReg = new RegExp(/^\d{10}\d*$/);
     var date = req.params.date;
+    var date2 = new Date (req.params.date)
 
-    if (dateReg.test(date)) {
+    if (/*dateReg.test(date)*/ date2.getTime() === date2.getTime()) {
         
         var dateFormatted = new Date (date).toUTCString();
         res.json({
